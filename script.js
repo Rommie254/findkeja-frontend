@@ -18,7 +18,7 @@ document.getElementById("signupForm").addEventListener("submit", function(event)
     var signupPassword = document.getElementById("signupPassword").value;
 
     // Check if the username already exists
-    fetch(`http://localhost:3000/users?username=${signupUsername}`)
+    fetch(`https://findkeja-server.onrender.com/users?username=${signupUsername}`)
         .then(response => response.json())
         .then(users => {
             if (users.length > 0) {
@@ -26,7 +26,7 @@ document.getElementById("signupForm").addEventListener("submit", function(event)
                 document.getElementById("signupMessage").innerText = "Username already exists. Please choose a different one.";
             } else {
                 // Username doesn't exist, proceed with signup
-                fetch('http://localhost:3000/users', {
+                fetch('https://findkeja-server.onrender.com/users', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -62,7 +62,7 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
     var loginPassword = document.getElementById("loginPassword").value;
 
     // Send a GET request to JSON server to check if the user exists
-    fetch(`http://localhost:3000/users?username=${loginUsername}&password=${loginPassword}`)
+    fetch(`https://findkeja-server.onrender.com/users?username=${loginUsername}&password=${loginPassword}`)
         .then(response => response.json())
         .then(users => {
             if (users.length > 0) {
@@ -124,7 +124,7 @@ document.getElementById("estateSearchInput").addEventListener("click", function(
     const inputValue = this.value.trim().toLowerCase();
     if (inputValue === '') {
         // Only populate the list if the search bar is empty
-        fetch("http://localhost:3000/estates")
+        fetch("https://findkeja-server.onrender.com/estates")
             .then(response => response.json())
             .then(estates => {
                 populateEstateList(estates);
@@ -181,14 +181,14 @@ document.getElementById("searchButton").addEventListener("click", function(event
 
 
 // Populate estate list on page load
-fetch("http://localhost:3000/estates")
+fetch("https://findkeja-server.onrender.com/estates")
     .then(response => response.json())
     .then(estates => populateEstateList(estates))
     .catch(error => console.error('Error fetching estates:', error));
 
 // Function to display house listings for the selected estate
 function filterHousesByEstate(estate) {
-    fetch(`http://localhost:3000/houses?estate=${estate}`)
+    fetch(`https://findkeja-server.onrender.com/houses?estate=${estate}`)
         .then(response => response.json())
         .then(houses => {
             const houseList = document.getElementById("houseList");
