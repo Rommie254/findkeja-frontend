@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Housing Search</title>
+    <link rel="stylesheet" href="styles.css" id="stylesheet">
+    <link rel="stylesheet" href="dark-theme.css" id="styles">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+</head>
+<body>
+<!----------------------------------------------------------> 
+<!--Login section-->
+<div class="container">
+    <div class="card" id="loginSignupCard">
+        <!-- Inside the Login Modal -->
+        <div id="loginModal" class="modal">
+            <div class="modal-content">
+                <!-- Image logo -->
+                <img src="https://github.com/Rommie254/images/blob/main/findkeja_logo.png?raw=true" alt="logo" class="logo">
+                <!-- <span class="close">&times;</span> Remove the close button -->
+                <div id="loginSection">
+                    <h2>Login</h2>
+                    <form id="loginForm">
+                        <label for="loginUsername">Username:</label>
+                        <input type="text" id="loginUsername" name="loginUsername">
+                        <label for="loginPassword">Password:</label>
+                        <input type="password" id="loginPassword" name="loginPassword">
+                        <button type="submit" class="button">Login</button>
+                        <p id="loginMessage" class="message"></p>
+                    </form>
+                    <a href="#" id="showSignupButton" class="link">Signup</a>
+                </div>
+                <div id="signupSection" style="display: none;">
+                    <h2>Signup</h2>
+                    <p id="signupMessage" class="message"></p>
+                    <form id="signupForm">
+                        <label for="signupUsername">Username:</label>
+                        <input type="text" id="signupUsername" name="signupUsername">
+                        <label for="signupPassword">Password:</label>
+                        <input type="password" id="signupPassword" name="signupPassword">
+                        <button type="submit" class="button">Signup</button>
+                        <p id="signupMessage" class="message"></p>
+                    </form>
+                    <a href="#" id="backToLoginButton" class="link">Back to Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!----------------------------------------------------------> 
+        <!-- User Page -->
+        <div id="userPage" style="display: none;">
+                <!--Header-->
+             <div class="header">
+                <a href="#default" class="logo">
+                    <div class="logo-container">
+                        <img src="https://github.com/Rommie254/images/blob/main/findkeja_logo.png?raw=true" alt="logo">
+                    </div>
+                </a>
+                <div class="header-right">
+                    <!--ThemeToggle-->
+                    <a href="#my">About</a>
+                    <a href="#my">Search</a>
+                    <a href="#my">Hotels</a>
+                    <a href="#my">BnB</a>
+                    <a href="#my">Camping</a>
+                    <a href="#my">Movers</a>
+                    <a href="#my">Garage Sale</a>
+                    <img class="theme-toggle" src="https://raw.githubusercontent.com/Rommie254/images/167b0f8c6daf9bae9e808bcd8442f8a765aaea4c/greenSun.svg" alt="Light Mode" id="themeToggle">
+                    <!-- Dark mode icon (initially hidden) -->
+                    <img class="https://raw.githubusercontent.com/Rommie254/images/e8241ab053a4aebca1c1ce3c17ffd3c61ad73fb2/greenmoon.svg" alt="Dark Mode" style="display: none;">
+                    <div class="profile-info">
+                        <img class="profile-icon" src="https://raw.githubusercontent.com/Rommie254/images/f46e5d2b01af51edd6babd8d42832cd01533fcf7/profile-circle-svgrepo-com.svg" alt="Profile">
+                        <span id="usernameDisplay"></span>
+                    </div>
+                </div>
+            </div>
+<!---------------------------------------------------------->            
+<div class="card" id="featuredCard">
+    <h1>Hi! Welcome to FindKeja</h1>
+    <div class="carousel">
+        <div><img src="https://github.com/Rommie254/images/blob/main/findkeja-sofa.jpeg?raw=true" alt="Image 1"></div>
+        <div><img src="https://github.com/Rommie254/images/blob/main/apartment1.jpg?raw=true" alt="Image 2"></div>
+        <div><img src="https://github.com/Rommie254/images/blob/main/houses.jpg?raw=true" alt="Image 3"></div>
+        <div><img src="https://github.com/Rommie254/images/blob/main/houses2.jpg?raw=true" alt="Image 4"></div>
+        <div><img src="https://github.com/Rommie254/images/blob/main/apartment2.jpg?raw=true" alt="Image 5"></div>
+    </div>
+    <div class="carousel-controls">
+        <button class="prev-btn" onclick="moveSlide('prev')">&lt;</button>
+        <button class="next-btn" onclick="moveSlide('next')">&gt;</button>
+    </div>
+</div>
+
+<!---------------------------------------------------------->              
+            <div class="card" id="estateSearchCard">
+                <div id="estateSearch">
+                    <!-- Estate search form -->
+                    <form id="estateSearchForm">
+                        <label for="estateSearchInput" style="color: white;">Search Nairobi Estate:</label>
+                        <input type="text" id="estateSearchInput" name="estateSearchInput" placeholder="Type an estate name...">
+                        <button type="submit" id="searchButton">Search</button>
+                    </form>
+                    <!-- Estate drawer -->
+                    <div id="estateListContainer">
+                        <ul id="estateList"></ul>
+                    </div>
+                </div>
+                <!-- House listing -->
+                <div id="houseList"></div>
+            </div>
+<!---------------------------------------------------------->  
+        <div class="card" id="aboutCard">
+            <h1>Why FindKeja?</h1>
+            <p>Welcome to FindKeja! We're thrilled to have you join us on our journey to simplify the process of finding your next home. At FindKeja, we understand the challenges of searching for vacant houses within Nairobi estates, and we're here to make it easier for you. Our platform offers a user-friendly way for you to search for and book vacant houses, ensuring that you find the perfect place to call home. But that's not all! In addition to helping you find houses, we also provide the convenience of booking tour guides to show you around different neighborhoods, giving you a firsthand look at what each area has to offer.</p>
+            <p>And it doesn't stop there – our services extend beyond just houses. You can also book movers directly on our platform, making the transition to your new home a breeze. Additionally, we offer a marketplace where you can shop for new items for your home or sell preowned items that you no longer need. With FindKeja, finding your next home or temporary stay, and all the services you need to make it feel like home, has never been easier. Start exploring now and discover the perfect place for you!</p>
+            <p>Best regards,</p>
+            <p>The FindKeja Team</p>
+        </div>
+<!---------------------------------------------------------->  
+        </div>
+          
+        </div>
+    </div>
+
+    <!-- Script -->
+    <script src="script.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+</body>
+</html>
