@@ -10,38 +10,44 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
 </head>
 <body>
-<!----------------------------------------------------------> 
-<!--Login section-->
+<!----------------------------------------------------------------------------------------------------> 
+<!--Login and signup section-->
 <div class="container">
-    <div class="card" id="loginSignupCard">
+    <div class="card">
         <!-- Inside the Login Modal -->
         <div id="loginModal" class="modal">
             <div class="modal-content">
                 <!-- Image logo -->
                 <img src="https://github.com/Rommie254/images/blob/main/findkeja_logo.png?raw=true" alt="logo" class="logo">
-                <!-- <span class="close">&times;</span> Remove the close button -->
+                
                 <div id="loginSection">
                     <h2>Login</h2>
                     <form id="loginForm">
-                        <label for="loginUsername">Username:</label>
-                        <input type="text" id="loginUsername" name="loginUsername">
+                        <label for="loginEmail">Email:</label>
+                        <input type="email" id="loginEmail" name="loginEmail" required>
+                        <br>
                         <label for="loginPassword">Password:</label>
-                        <input type="password" id="loginPassword" name="loginPassword">
+                        <input type="password" id="loginPassword" name="loginPassword" required>
+                        <br>
                         <button type="submit" class="button">Login</button>
-                        <p id="loginMessage" class="message"></p>
+                        <p id="error-message" style="color:red;" class="message"></p>
+                        <button class="google-button" id="google-login-button">Login with Google</button>
                     </form>
-                    <a href="#" id="showSignupButton" class="link">Signup</a>
+                    <a href="#" id="showSignupButton" class="link">Don't have an account? Signup</a>
                 </div>
                 <div id="signupSection" style="display: none;">
                     <h2>Signup</h2>
                     <p id="signupMessage" class="message"></p>
                     <form id="signupForm">
-                        <label for="signupUsername">Username:</label>
-                        <input type="text" id="signupUsername" name="signupUsername">
+                        <label for="signupEmail">Email:</label>
+                        <input type="email" id="signupEmail" name="signupEmail" required>
+                        <br>
                         <label for="signupPassword">Password:</label>
                         <input type="password" id="signupPassword" name="signupPassword">
+                        <br>
                         <button type="submit" class="button">Signup</button>
-                        <p id="signupMessage" class="message"></p>
+                        <p id="signupMessage" class="message" style="color: red;"></p>
+                        <button class="google-button" id="google-signup-button">Signup with Google</button>
                     </form>
                     <a href="#" id="backToLoginButton" class="link">Back to Login</a>
                 </div>
@@ -126,7 +132,9 @@
     </div>
 
     <!-- Script -->
+    <script type="module" src="auth.js"></script>
     <script src="script.js"></script>
+
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 </body>
 </html>

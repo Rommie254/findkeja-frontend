@@ -1,103 +1,177 @@
 h1 {
-    color: rgb(35, 234, 9);
-    padding: 20px;
-    margin: 20px;
-    justify-content: center; 
-  }
+  color: rgb(60, 179, 113);
+  padding: 20px;
+  margin: 20px;
+  justify-content: center; 
+}
   
-  p {
-    color: white;
-    padding: 20px;
-    margin: 20px;
-    justify-content: center; 
-  }
+p {
+  color: white;
+  padding: 20px;
+  margin: 20px;
+  justify-content: center; 
+}
   
-  /* Login */
-  #loginSignupCard {
-    background-color:rgb(0, 0, 128);
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    width: 300px;
-    margin: 0 auto; /* Center the card horizontally */
-    margin-top: 50px; /* Adjust the top margin as needed */
-    color: white;
-    position: relative; /* Set position to relative */
-    z-index: 1; /* Ensure card appears on top of the container */
-    
-  }
-  .container {
-    position: relative; /* Set position to relative for pseudo-element positioning */
-    height: 100vh; /* Adjust the height as needed */
-    display: flex; /* Use flexbox for positioning */
-    justify-content: center; /* Center content horizontally */
-    align-items: center; /* Center content vertically */
-    background-image: url('https://github.com/Rommie254/images/blob/main/apartment1.jpg?raw=true'); /* Specify the URL of your background image */
-    background-size: cover; /* Cover the entire container with the background image */
-    background-position: center; /* Center the background image */
-  }
+/* Login */
+.card {
+  background-color: rgba(0, 0, 128, 0.833);
+  border-radius: 10px;
+  box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.55);
+  padding: 20px;
+  width: 300px;
+  margin: 0 auto;
+  margin-top: 4rem; 
+  margin-bottom: 4rem; 
+  color: white;
+  position: relative;
+  z-index: 1;
+}
+
+.container {
+  position: relative; 
+  height: 100vh; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  background-image: url('https://github.com/Rommie254/images/blob/main/apartment1.jpg?raw=true'); 
+  background-size: cover; 
+  background-position: center; 
+}
   
-  .container::before {
-    content: ""; /* Add content to the pseudo-element */
-    position: absolute; /* Set position to absolute */
-    top: 0; /* Position from the top */
-    left: 0; /* Position from the left */
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    background-color: rgba(35, 234, 9, 0.7); /* Transparent background color */
-  }
-  /* Style the image logo */
-  #loginSignupCard .logo {
-    width: 300px; /* Adjust logo width */
-    height: auto; /* Keep aspect ratio */
-    margin-bottom: 20px; /* Adjust logo bottom margin */
-    align-items: center;
-  }
+.container::before {
+  content: ""; 
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%; 
+  background-color: rgba(60, 179, 114, 0.747); 
+}
+
+/* Style the image logo */
+.card .logo {
+  width: 260px;
+  height: auto;
+  margin-bottom: 2px;
+  align-items: center;
+}
   
-  /* Style the close button */
-  #loginSignupCard .close {
-    display: none; /* Hide the close button */
-  }
+/* Style the close button */
+.card .close {
+  display: none; 
+}
   
-  /* Style the headings */
-  #loginSignupCard .modal-content h2 {
-    color: rgb(35, 234, 9); /* Heading text color */
-    margin-bottom: 20px; /* Heading bottom margin */
-  }
+/* Style the headings */
+.card h2 {
+  color: rgb(60, 179, 113);
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label {
+  margin-bottom: 2px;
+  text-align: left;
+  width: calc(100% - 32px);
+  padding-left: 8px;
+  box-sizing: border-box;
+}
   
-  /* Style the input fields */
-  #loginSignupCard input[type="text"],
-  #loginSignupCard input[type="password"] {
-    width: 75%; /* Make input fields full width */
-    padding: 10px; /* Adjust input field padding */
-    margin-bottom: 10px; /* Adjust input field bottom margin */
-    border-radius: 5px; /* Input field border radius */
-    border: 1px solid #ccc; /* Input field border */
-  }
+/* Style the input fields and buttons */
+input[type="email"],
+input[type="password"],
+.button,
+.google-button {
+  width: calc(100% - 48px);
+  max-width: 260px;
+  padding: 10px;
+  margin: 2px 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.button {
+  background-color: rgb(60, 179, 113);
+  color: black;
+  border: 1px solid rgba(60, 179, 114, 0.142);
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.button:hover {
+  background-color: rgba(60, 179, 114, 0.493);
+  color: white;
+  box-shadow: 0 -1px 0 rgba(0, 0, 0, .04), 0 2px 4px rgba(0, 0, 0, .25);
+}
+
+.google-button {
+  background-color: white;
+  color: #757575;
+  box-shadow: 0 -1px 0 rgba(0, 0, 0, .04), 0 1px 1px rgba(0, 0, 0, .25);
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMTgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNMTcuNiA5LjJsLS4xLTEuOEg5djMuNGg0LjhDMTMuNiAxMiAxMyAxMyAxMiAxMy42djIuMmgzYTguOCA4LjggMCAwIDAgMi42LTYuNnoiIGZpbGw9IiM0Mjg1RjQiIGZpbGwtcnVsZT0ibm9uemVybyIvPjxwYXRoIGQ9Ik05IDE4YzIuNCAwIDQuNS0uOCA2LTIuMmwtMy0yLjJhNS40IDUuNCAwIDAgMS04LTIuOUgxVjEzYTkgOSAwIDAgMCA4IDV6IiBmaWxsPSIjMzRBODUzIiBmaWxsLXJ1bGU9Im5vbnplcm8iLz48cGF0aCBkPSJNNCAxMC43YTUuNCA1LjQgMCAwIDEgMC0zLjRWNUgxYTkgOSAwIDAgMCAwIDhsMy0yLjN6IiBmaWxsPSIjRkJCQzA1IiBmaWxsLXJ1bGU9Im5vbnplcm8iLz48cGF0aCBkPSJNOSAzLjZjMS4zIDAgMi41LjQgMy40IDEuM0wxNSAyLjNBOSA5IDAgMCAwIDEgNWwzIDIuNGE1LjQgNS40IDAgMCAxIDUtMy43eiIgZmlsbD0iI0VBNDMzNSIgZmlsbC1ydWxlPSJub256ZXJvIi8+PHBhdGggZD0iTTAgMGgxOHYxOEgweiIvPjwvZz48L3N2Zz4=);
+  background-repeat: no-repeat;
+  background-position: 12px 11px;
+  text-align: center;
+  transition: background-color .3s, box-shadow .3s;
+}
+
+.google-button:hover {
+  background-color: rgba(60, 179, 114, 0.498);
+  color: white;
+  box-shadow: 0 -1px 0 rgba(0, 0, 0, .04), 0 2px 4px rgba(0, 0, 0, .25);
+}
+
+.google-button:active {
+  background-color: #eeeeee;
+}
+
+.google-button:focus {
+  outline: none;
+  box-shadow: 
+    0 -1px 0 rgba(0, 0, 0, .04),
+    0 2px 4px rgba(0, 0, 0, .25),
+    0 0 0 3px #c8dafc;
+}
+
+.google-button:disabled {
+  filter: grayscale(100%);
+  background-color: #ebebeb;
+  box-shadow: 0 -1px 0 rgba(0, 0, 0, .04), 0 1px 1px rgba(0, 0, 0, .25);
+  cursor: not-allowed;
+}
+
+.card p{
+  margin: 0;
+}
+
+.card .link {
+  color: rgb(60, 179, 113);
+  text-decoration: none;
+  margin-top: 10px;
+  display: block;
+  text-align: center;
+}
+
+.card .link:hover {
+  text-decoration: underline;
+}
   
-  /* Style the buttons */
-  #loginSignupCard .button {
-    background-color: rgb(35, 234, 9); /* Button background color */
-    color: #fff; /* Button text color */
-    padding: 10px 20px; /* Button padding */
-    border: none; /* Remove button border */
-    border-radius: 5px; /* Button border radius */
-    cursor: pointer; /* Change cursor to pointer on hover */
-    margin-top: 10px; /* Adjust button top margin */
-    display: flex; /* Use flexbox for button alignment */
-    justify-content: space-between; /* Space buttons evenly */
-  }
-  #loginSignupCard .link {
-    color:rgb(35, 234, 9) ;
-  }
-  
-  
+ 
     /* estate listing*/
     #estateListContainer {
       font-family: verdana;
       font-size: 20px;
       color: white;
-      background: rgb(35, 234, 9);
+      background: rgb(60, 179, 113);
       width: 200px;
       height: auto;
       min-height: 500px;
@@ -114,7 +188,7 @@ h1 {
   #estateList li {
       padding: 10px; 
       cursor: pointer; 
-      background-color: rgb(35, 234, 9);
+      background-color: rgb(60, 179, 113);
   }
   
   #estateList li:hover {
@@ -122,7 +196,6 @@ h1 {
   }
   
   /*Header*/
-  
   /* CSS for navigation bar */
   .header {
     display: flex;
@@ -143,10 +216,10 @@ h1 {
   }
   
   .logo-container img {
-      width: 200px; /* Adjust width as needed */
-      height: auto; /* Maintain aspect ratio */
-      border-radius: 20px; /* Make it circular */
-      border: 2px solid #fff; /* Add a white border */
+      width: 200px; 
+      height: auto; 
+      border-radius: 20px; 
+      border: 2px solid #fff; 
    
   }
   .logo-container img:hover {
@@ -160,15 +233,15 @@ h1 {
   }
   
   .header-right a {
-    color: rgb(35, 234, 9);
+    color: rgb(60, 179, 113);
     text-decoration: none;
     margin-left: 20px;
     font-size: 20px;
-    transition: font-size 0.1s; /* Add transition for font-size */
+    transition: font-size 0.1s;
   }
   
   .header-right a:hover {
-    font-size: 20px; /* Increase font size on hover */
+    font-size: 20px; 
     color:rgb(0, 0, 128) ;
   }
   
@@ -218,59 +291,59 @@ h1 {
   /* Responsive styles */
   @media (max-width: 768px) {
       #estateSearchCard {
-          padding: 10px; /* Adjust padding for smaller screens */
-          margin: 10px; /* Adjust margin for smaller screens */
+          padding: 10px; 
+          margin: 10px; 
       }
   }
   /* card2 content  */
   #estateSearchCard label {
-    color: #333; /* Text color */
-    font-size: 18px; /* Font size */
-    margin-bottom: 10px; /* Bottom margin */
+    color: #333; 
+    font-size: 18px; 
+    margin-bottom: 10px; 
   }
   
   #estateSearchCard input[type="text"] {
-    width: 100%; /* Full width */
-    padding: 10px; /* Padding */
-    border: 1px solid #ccc; /* Border */
-    border-radius: 5px; /* Border radius */
-    margin-bottom: 10px; /* Bottom margin */
+    width: 100%; 
+    padding: 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    margin-bottom: 10px; 
   }
   
   /* Style for the search input */
   #estateSearchCard input[type="text"] {
-    padding: 10px; /* Input field padding */
-    border: none; /* Remove input field border */
-    border-radius: 5px; /* Input field border radius */
-    margin-top: 10px; /* Adjust input field top margin */
-    width: calc(50% - 20px); /* Calculate input field width */
-    display: block; /* Change display to block */
+    padding: 10px; 
+    border: none; 
+    border-radius: 5px; 
+    margin-top: 10px; 
+    width: calc(50% - 20px); 
+    display: block; 
   }
   
   /* Style for the search button */
   #estateSearchCard button {
-    background-color: rgb(35, 234, 9); /* Button background color */
-    color: #fff; /* Button text color */
-    padding: 10px 20px; /* Button padding */
-    border: none; /* Remove button border */
-    border-radius: 5px; /* Button border radius */
-    cursor: pointer; /* Change cursor to pointer on hover */
-    margin-top: 10px; /* Adjust button top margin */
-    display: block; /* Change display to block */
+    background-color: rgb(60, 179, 113); 
+    color: #fff; 
+    padding: 10px 20px; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    margin-top: 10px; 
+    display: block; 
    margin-right: 100px;
   }
   
   
   
   #estateSearchCard button:hover {
-    background-color: rgb(113, 240, 96); /* Button background color on hover */
+    background-color: rgb(60, 179, 113); 
   }
   
   
   /****card1**/
   #featuredCard {
     background-color: rgb(0, 0, 128); 
-    border-radius: 10px; /* Rounded corners */
+    border-radius: 10px; 
     padding: 0px;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -283,8 +356,8 @@ h1 {
   /* Responsive styles */
   @media (max-width: 768px) {
     #featuredCard {
-        padding: 10px; /* Adjust padding for smaller screens */
-        margin: 10px; /* Adjust margin for smaller screens */
+        padding: 10px; 
+        margin: 10px; /
     }
   }
   
@@ -292,7 +365,7 @@ h1 {
   /****card3**/
   #aboutCard {
     background-color: rgb(0, 0, 128); 
-    border-radius: 10px; /* Rounded corners */
+    border-radius: 10px; 
     padding: 0px;
     margin-top: 10px;
     margin-bottom: 10px; 
@@ -305,15 +378,15 @@ h1 {
   /* Responsive styles */
   @media (max-width: 768px) {
     #aboutCard {
-        padding: 10px; /* Adjust padding for smaller screens */
-        margin: 10px; /* Adjust margin for smaller screens */
+        padding: 10px; 
+        margin: 10px; 
     }
   }
   
   /* slideshow */
   /* Style for the carousel container */
   .card {
-    position: relative; /* Ensure relative positioning for absolute children */
+    position: relative; 
   }
   
   /* Style for the carousel images */
@@ -321,39 +394,39 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 40%; /* Ensure the carousel takes up the full height of the card */
+    height: 40%; 
   }
   
   .carousel img {
-    width: 40%; /* Adjust image width as needed */
+    width: 40%; 
     border-radius: 10px;
-    margin: 20px auto; /* Center the image horizontally and add space above and below */
+    margin: 20px auto; 
   }
   
   
   /* Style for the carousel controls */
   .carousel-controls {
-    position: absolute; /* Position the controls relative to the card */
-    top: 50%; /* Position controls vertically at the middle of the card */
-    left: 0; /* Position the previous button at the left edge */
-    right: 0; /* Position the next button at the right edge */
-    transform: translateY(-50%); /* Center controls vertically */
-    display: flex; /* Use flexbox for alignment */
-    justify-content: space-between; /* Separate the buttons */
+    position: absolute; 
+    top: 50%; 
+    left: 0; 
+    right: 0; 
+    transform: translateY(-50%); 
+    display: flex; 
+    justify-content: space-between; 
   }
   
   /* Style for the previous and next buttons */
   .prev-btn,
   .next-btn {
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-    color: white; /* Text color */
-    border: none; /* Remove button border */
-    padding: 10px; /* Adjust padding as needed */
-    cursor: pointer; /* Change cursor on hover */
+    background-color: rgba(0, 0, 0, 0.5); 
+    color: white; 
+    border: none; 
+    padding: 10px; 
+    cursor: pointer; 
   }
   
   /* Position the next button at the right edge */
   .next-btn {
-    order: 2; /* Change the order to position it on the right */
+    order: 2; 
   }
   

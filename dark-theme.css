@@ -20,7 +20,7 @@ body.dark-mode {
 
 /* Add basic styles */
 h1 {
-    color: rgb(35, 234, 9);
+    color: rgb(60, 179, 113);
     padding: 20px;
     margin: 20px;
     justify-content: center; 
@@ -33,92 +33,13 @@ h1 {
     justify-content: center; 
   }
   
-  /* Login */
-  #loginSignupCard {
-    background-color:rgb(0, 0, 128);
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    width: 300px;
-    margin: 0 auto; /* Center the card horizontally */
-    margin-top: 50px; /* Adjust the top margin as needed */
-    color: white;
-    position: relative; /* Set position to relative */
-    z-index: 1; /* Ensure card appears on top of the container */
-    
-  }
-  .container {
-    position: relative; /* Set position to relative for pseudo-element positioning */
-    height: 100vh; /* Adjust the height as needed */
-    display: flex; /* Use flexbox for positioning */
-    justify-content: center; /* Center content horizontally */
-    align-items: center; /* Center content vertically */
-    background-image: url('https://github.com/Rommie254/images/blob/main/apartment1.jpg?raw=true'); /* Specify the URL of your background image */
-    background-size: cover; /* Cover the entire container with the background image */
-    background-position: center; /* Center the background image */
-  }
-  
-  .container::before {
-    content: ""; /* Add content to the pseudo-element */
-    position: absolute; /* Set position to absolute */
-    top: 0; /* Position from the top */
-    left: 0; /* Position from the left */
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    background-color: rgba(35, 234, 9, 0.7); /* Transparent background color */
-  }
-  /* Style the image logo */
-  #loginSignupCard .logo {
-    width: 300px; /* Adjust logo width */
-    height: auto; /* Keep aspect ratio */
-    margin-bottom: 20px; /* Adjust logo bottom margin */
-    align-items: center;
-  }
-  
-  /* Style the close button */
-  #loginSignupCard .close {
-    display: none; /* Hide the close button */
-  }
-  
-  /* Style the headings */
-  #loginSignupCard .modal-content h2 {
-    color: rgb(35, 234, 9); /* Heading text color */
-    margin-bottom: 20px; /* Heading bottom margin */
-  }
-  
-  /* Style the input fields */
-  #loginSignupCard input[type="text"],
-  #loginSignupCard input[type="password"] {
-    width: 75%; /* Make input fields full width */
-    padding: 10px; /* Adjust input field padding */
-    margin-bottom: 10px; /* Adjust input field bottom margin */
-    border-radius: 5px; /* Input field border radius */
-    border: 1px solid #ccc; /* Input field border */
-  }
-  
-  /* Style the buttons */
-  #loginSignupCard .button {
-    background-color: rgb(35, 234, 9); /* Button background color */
-    color: #fff; /* Button text color */
-    padding: 10px 20px; /* Button padding */
-    border: none; /* Remove button border */
-    border-radius: 5px; /* Button border radius */
-    cursor: pointer; /* Change cursor to pointer on hover */
-    margin-top: 10px; /* Adjust button top margin */
-    display: flex; /* Use flexbox for button alignment */
-    justify-content: space-between; /* Space buttons evenly */
-  }
-  #loginSignupCard .link {
-    color:rgb(35, 234, 9) ;
-  }
-  
   
     /* estate listing*/
     #estateListContainer {
       font-family: verdana;
       font-size: 20px;
       color: white;
-      background: rgb(35, 234, 9);
+      background: rgb(60, 179, 113);
       width: 200px;
       height: auto;
       max-height:400px;
@@ -135,7 +56,7 @@ h1 {
   #estateList li {
       padding: 10px; 
       cursor: pointer; 
-      background-color: rgb(35, 234, 9);
+      background-color: rgb(60, 179, 113);
   }
   
   #estateList li:hover {
@@ -181,7 +102,7 @@ h1 {
   }
   
   .header-right a {
-    color: rgb(35, 234, 9);
+    color: rgb(60, 179, 113);
     text-decoration: none;
     margin-left: 20px;
     font-size: 20px;
@@ -264,7 +185,7 @@ h1 {
   
   /* Style for the search button */
   #estateSearchCard button {
-    background-color: rgb(35, 234, 9); /* Button background color */
+    background-color: rgb(60, 179, 113); /* Button background color */
     color: #fff; /* Button text color */
     padding: 10px 20px; /* Button padding */
     border: none; /* Remove button border */
@@ -278,7 +199,7 @@ h1 {
   
   
   #estateSearchCard button:hover {
-    background-color: rgb(113, 240, 96); /* Button background color on hover */
+    background-color: rgb(60, 179, 113); /* Button background color on hover */
   }
   
   
