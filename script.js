@@ -134,6 +134,10 @@ function filterHousesByEstate(estate) {
                         </div>
                         </div>
                         <img src="${house.image}" alt="${house.house_name}">
+                        <div class="button-container">
+                            <button class="action-button">Book Now</button>
+                            <button class="action-button">Contact Management</button>
+                        </div>
                     `;
                     houseList.appendChild(houseElement);
                 });
