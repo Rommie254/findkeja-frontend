@@ -119,15 +119,21 @@ function filterHousesByEstate(estate) {
                     houseElement.innerHTML = `
                         <!-- House details -->
                         <h3>${house.estate}</h3>
-                        <p>House Name: ${house.house_name}</p>
-                        <p>Type: ${house.type}</p>
-                        <p>Water Source: ${house.water_source}</p>
-                        <p>Management: ${house.management}</p>
-                        <p>Rent: ${house.rent}</p>
-                        <p>Deposit: ${house.deposit}</p>
-                        <p>View on Maps: <a href="${house.view_maps}" target="_blank">Link</a></p>
+                        <div class="house-details">
+                        <div class="left-column">
+                            <p><strong>House Name:</strong> ${house.house_name}</p>
+                            <p><strong>Type:</strong> ${house.type}</p>
+                            <p><strong>Water Source:</strong> ${house.water_source}</p>
+                            <p><strong>Management:</strong> ${house.management}</p>
+                        </div>
+                        <div class="right-column">
+                            <p><strong>Rent:</strong> ${house.rent}</p>
+                            <p><strong>Deposit:</strong> ${house.deposit}</p>
+                            <p><strong>Video:</strong> <a href="${house.video}" target="_blank">Watch video</a></p>
+                            <p><strong>Location:</strong> <a href="${house.view_maps}" target="_blank">View on Google Maps</a></p>
+                        </div>
+                        </div>
                         <img src="${house.image}" alt="${house.house_name}">
-                        <p>Video: <a href="${house.video}" target="_blank">Link</a></p>
                     `;
                     houseList.appendChild(houseElement);
                 });
@@ -142,7 +148,6 @@ function filterHousesByEstate(estate) {
 }
 
 // slideshow featured products
-
 let currentIndex = 0;
 const slides = document.querySelectorAll('.carousel img');
 const totalSlides = slides.length;
@@ -166,8 +171,8 @@ function moveSlide(direction) {
     showSlide(currentIndex);
 }
 
-// Automatically move to the next slide every 3 seconds
-setInterval(() => moveSlide('next'), 3000);
+// Automatically move to the next slide every 5 seconds
+setInterval(() => moveSlide('next'), 5000);
 
 // Show the initial slide
 showSlide(currentIndex);
