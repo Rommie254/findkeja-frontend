@@ -41,17 +41,13 @@ document.getElementById("estateSearchInput").addEventListener("click", function(
     const inputValue = this.value.trim().toLowerCase();
     if (inputValue === '') {
         // Only populate the list if the search bar is empty
-        fetch("https://findkeja-server.onrender.com/estates")
-            .then(response => response.json())
-            .then(estates => {
-                populateEstateList(estates);
-                document.getElementById("estateListContainer").style.display = "block"; // Show the word list
-            })
-            .catch(error => console.error('Error fetching estates:', error));
-    } else {
+        fetchEstates();
         document.getElementById("estateListContainer").style.display = "block"; // Show the word list
+
+    } else {
+      document.getElementById("estateListContainer").style.display = "block"; // Show the word list
     }
-});
+  });
 
 
 // Function to handle when the user clicks outside the search bar
@@ -97,58 +93,73 @@ document.getElementById("searchButton").addEventListener("click", function(event
 });
 
 
-// Populate estate list on page load
-fetch("https://findkeja-server.onrender.com/estates")
+// Function to fetch estates with authentication
+function fetchEstates() {
+    const token = localStorage.getItem('authToken');
+    fetch("https://findkeja-server.onrender.com/estates", {
+        headers: {
+            'Authorization': `Bearer ${token}`
+        }
+    })
     .then(response => response.json())
     .then(estates => populateEstateList(estates))
     .catch(error => console.error('Error fetching estates:', error));
+}
 
 // Function to display house listings for the selected estate
 function filterHousesByEstate(estate) {
-    fetch(`https://findkeja-server.onrender.com/houses?estate=${estate}`)
-        .then(response => response.json())
-        .then(houses => {
-            const houseList = document.getElementById("houseList");
-            houseList.innerHTML = ""; // Clear previous listings
+    const token = localStorage.getItem('authToken');
+    fetch(`https://findkeja-server.onrender.com/houses?estate=${estate}`, {
+        headers: {
+            'Authorization': `Bearer ${token}`
+        }
+    })
 
-            if (houses.length > 0) {
-                houses.forEach(house => {
-                    // Create and append house listing elements
-                    const houseElement = document.createElement("div");
-                    houseElement.classList.add("house");
-                    houseElement.innerHTML = `
-                        <!-- House details -->
-                        <h3>${house.estate}</h3>
-                        <div class="house-details">
-                        <div class="left-column">
-                            <p><strong>House Name:</strong> ${house.house_name}</p>
-                            <p><strong>Type:</strong> ${house.type}</p>
-                            <p><strong>Water Source:</strong> ${house.water_source}</p>
-                            <p><strong>Management:</strong> ${house.management}</p>
-                        </div>
-                        <div class="right-column">
-                            <p><strong>Rent:</strong> ${house.rent}</p>
-                            <p><strong>Deposit:</strong> ${house.deposit}</p>
-                            <p><strong>Video:</strong> <a href="${house.video}" target="_blank">Watch video</a></p>
-                            <p><strong>Location:</strong> <a href="${house.view_maps}" target="_blank">View on Google Maps</a></p>
-                        </div>
-                        </div>
-                        <img src="${house.image}" alt="${house.house_name}">
-                        <div class="button-container">
-                            <button class="action-button">Book Now</button>
-                            <button class="action-button">Contact Management</button>
-                        </div>
-                    `;
-                    houseList.appendChild(houseElement);
-                });
-            } else {
-                houseList.innerHTML = "<p>No houses found for this estate.</p>";
-            }
-        })
-        .catch(error => {
-            console.error('Error fetching houses by estate:', error);
-            document.getElementById("houseList").innerHTML = "<p>An error occurred. Please try again later.</p>";
-        });
+    
+
+    .then(response => response.json())
+    .then(houses => {
+        const houseList = document.getElementById("houseList");
+        houseList.innerHTML = ""; // Clear previous listings
+
+        if (houses.length > 0) {
+            houses.forEach(house => {
+                // Create and append house listing elements
+                const houseElement = document.createElement("div");
+                houseElement.classList.add("house");
+                houseElement.innerHTML = `
+                    <!-- House details -->
+                    <h3>${house.estate}</h3>
+                    <div class="house-details">
+                    <div class="left-column">
+                        <p><strong>House Name:</strong> ${house.house_name}</p>
+                        <p><strong>Type:</strong> ${house.type}</p>
+                        <p><strong>Water Source:</strong> ${house.water_source}</p>
+                        <p><strong>Management:</strong> ${house.management}</p>
+                    </div>
+                    <div class="right-column">
+                        <p><strong>Rent:</strong> ${house.rent}</p>
+                        <p><strong>Deposit:</strong> ${house.deposit}</p>
+                        <p><strong>Video:</strong> <a href="${house.video}" target="_blank">Watch video</a></p>
+                        <p><strong>Location:</strong> <a href="${house.view_maps}" target="_blank">View on Google Maps</a></p>
+                    </div>
+                    </div>
+                    <img src="${house.image}" alt="${house.house_name}">
+                    <div class="button-container">
+                        <button class="action-button">Book Now</button>
+                        <button class="action-button">Contact Management</button>
+                    </div>
+                `;
+                houseList.appendChild(houseElement);
+            });
+        } else {
+            houseList.innerHTML = "<p>No houses found for this estate.</p>";
+        }
+    })
+    .catch(error => {
+        console.error('Error fetching houses by estate:', error);
+        document.getElementById("houseList").innerHTML = "<p>An error occurred. Please try again later.</p>";
+    });
 }
 
 // slideshow featured products
@@ -175,8 +186,8 @@ function moveSlide(direction) {
     showSlide(currentIndex);
 }
 
-// Automatically move to the next slide every 5 seconds
-setInterval(() => moveSlide('next'), 5000);
+// Automatically move to the next slide every 4 seconds
+setInterval(() => moveSlide('next'), 4000);
 
 // Show the initial slide
 showSlide(currentIndex);

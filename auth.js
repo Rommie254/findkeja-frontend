@@ -49,11 +49,14 @@ loginForm.addEventListener('submit', (e) => {
         .then((userCredential) => {
             // Signed in
             const user = userCredential.user;
+            user.getIdToken().then((token) => {
+            localStorage.setItem('authToken', token);
 
             // Redirect to the userpage 
             document.getElementById("userPage").style.display = "block";
             document.getElementById("loginModal").style.display = "none";
             document.getElementsByClassName("container")[0].style.display = "none";
+            });
             
         })
         .catch((error) => {
@@ -77,10 +80,13 @@ signupForm.addEventListener('submit', (e) => {
         .then((userCredential) => {
             // Signed up
             const user = userCredential.user;
+            user.getIdToken().then((token) => {
+                localStorage.setItem('authToken', token);
             // Redirect to the main user page 
             document.getElementById("userPage").style.display = "block";
             document.getElementById("loginModal").style.display = "none";
             document.getElementsByClassName("container")[0].style.display = "none";
+            });
             
         })
         .catch((error) => {
@@ -102,11 +108,13 @@ googleLoginButton.addEventListener('click', () => {
             const token = credential.accessToken;
             // The signed-in user info.
             const user = result.user;
+            user.getIdToken().then((token) => {
+                localStorage.setItem('authToken', token);
             // Redirect to the main user page
             document.getElementById("userPage").style.display = "block";
             document.getElementById("loginModal").style.display = "none";
             document.getElementsByClassName("container")[0].style.display = "none";
-            
+            });
         })
         .catch((error) => {
             // Handle Errors here.
@@ -131,11 +139,13 @@ googleSignupButton.addEventListener('click', () => {
             const token = credential.accessToken;
             // The signed-in user info.
             const user = result.user;
+            user.getIdToken().then((token) => {
+                localStorage.setItem('authToken', token);
             // Redirect to the main user page
             document.getElementById("userPage").style.display = "block";
             document.getElementById("loginModal").style.display = "none";
             document.getElementsByClassName("container")[0].style.display = "none";
-            
+            });
         })
         .catch((error) => {
             // Handle Errors here.
