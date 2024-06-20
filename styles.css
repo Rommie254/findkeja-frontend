@@ -21,7 +21,7 @@ p {
   
 /* Login */
 .logincard {
-  background-color: rgba(0, 0, 128, 0.833);
+  background-color: rgba(0, 0, 128, 0.8);
   border-radius: 10px;
   box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.55);
   padding: 20px;
@@ -40,7 +40,7 @@ p {
   display: flex; 
   justify-content: center; 
   align-items: center; 
-  background-image: url('https://github.com/Rommie254/images/blob/main/apartment1.jpg?raw=true'); 
+  background-image: url('images/apartment1.jpg'); 
   background-size: cover; 
   background-position: center; 
 }
@@ -184,11 +184,11 @@ input[type="password"],
   border-radius: 10px;
   box-shadow: 0px 2px 10px 2px rgba(91, 120, 122, 0.689);
 
-  /* position: fixed;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000; */
+  z-index: 1000;
 }
 
 .header .logo-container {
@@ -242,10 +242,14 @@ input[type="password"],
   border-radius: 50%;
   vertical-align: middle;
   background-color: rgb(60, 179, 113);
+  margin-right: 30px;
 }
 
 .profile-icon:hover {
   background-color: rgb(0, 0, 128);
+  box-shadow: 0 0 10px rgb(0, 0, 128);
+  width: 46px;
+  transition: ease-in-out;
 }
 
 .theme-toggle,
@@ -253,6 +257,7 @@ input[type="password"],
   width: 50px;
   cursor: pointer;
   margin-left: 20px;
+  border-radius: 100%;
 }
 
 .theme-toggle:hover{
@@ -267,9 +272,15 @@ input[type="password"],
 .card {
   background-color: white;
   padding: 20px;
-  margin: 80px 20px 20px 20px;
+  margin: 150px 20px 20px 20px;
   border-radius: 10px;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 768px) {
+  .card {
+    margin: 150px 100px 20px 100px; 
+  }
 }
 
 /* Carousel styling */
@@ -288,29 +299,46 @@ input[type="password"],
   object-fit: cover;
 }
 
+/* Increase the height for larger screens */
+@media (min-width: 768px) {
+  .carousel img {
+    height: 350px; 
+  }
+}
+
+@media (min-width: 1024px) {
+  .carousel img {
+    height: 400px;
+  }
+}
+
 .carousel-controls {
   display: flex;
-  justify-content: space-between;
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 100%;
-  transform: translateY(-50%);
+  justify-content: center;
+  position: relative;
+  margin-top: 15px;
 }
 
 .carousel-controls button {
-  background-color: rgba(60, 179, 113, 0.7);
+  background-color: rgba(60, 179, 114, 0.8);
   color: white;
   border: none;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  border-radius: 8px;
+  width: 35px;
+  height: 30px;
   cursor: pointer;
+  margin: 0 4px;
   transition: background-color 0.3s;
 }
 
 .carousel-controls button:hover {
-  background-color: rgba(60, 179, 113, 1);
+  background-color: rgba(0, 0, 128);
+  transition: background-color 0.3s;
+}
+
+#featuredCard h1{
+  text-align: center;
+  margin-top: 0;
 }
 
 /* Estate search card */
@@ -337,12 +365,14 @@ input[type="password"],
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  margin-top: 20px;
   transition: background-color 0.3s;
 }
 
 #searchButton:hover {
-  background-color: rgba(60, 179, 114, 0.493);
-  color: black;
+  background-color: rgb(0, 0, 128);
+  color: white;
+  transition: ease-in-out;
 }
 
 /* Estate list styling */
@@ -363,6 +393,7 @@ input[type="password"],
   border-radius: 4px;
   box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
 }
+
 
 /* About card */
 #aboutCard {

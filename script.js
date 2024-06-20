@@ -1,8 +1,8 @@
 // Toggle between dark and light mode
 const themeToggle = document.getElementById('themeToggle');
 const stylesheet = document.getElementById('stylesheet');
-const lightModeIconSrc = 'https://raw.githubusercontent.com/Rommie254/images/1030424fccb11f97c3f36737c6bb78c59c85b8e5/greenSun.svg';
-const darkModeIconSrc = 'https://raw.githubusercontent.com/Rommie254/images/1030424fccb11f97c3f36737c6bb78c59c85b8e5/greenmoon.svg';
+const lightModeIconSrc = 'images/greenSun.svg';
+const darkModeIconSrc = 'images/greenmoon.svg';
 
 themeToggle.addEventListener('click', function() {
     if (document.body.classList.contains('dark-mode')) {
