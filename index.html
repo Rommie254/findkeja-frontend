@@ -1,113 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Housing Search</title>
     <link rel="stylesheet" href="styles.css" id="stylesheet">
     <!-- <link rel="stylesheet" href="dark-theme.css" id="styles"> -->
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
 </head>
+
 <body>
-    <!----------------------------------------------------------------------------------------------------> 
+    <!---------------------------------------------------------------------------------------------------->
     <!--Login and signup section-->
     <div class="container">
         <div class="logincard">
             <!-- Inside the Login Modal -->
-            <div id="loginModal" class="modal">
+            <div id="loginModal" class="modal" role="dialog" aria-labelledby="loginSection" aria-hidden="true">
                 <div class="modal-content">
                     <!-- Image logo -->
-                    <img src="images/findkeja_logo.png" alt="logo" class="logo">
-                    
-                    <div id="loginSection">
+                    <img src="images/findkeja_logo.png" alt="FindKeja logo" class="logo">
+
+                    <section id="loginSection" aria-live="polite">
                         <h2>Login</h2>
                         <form id="loginForm">
                             <label for="loginEmail">Email:</label>
-                            <input type="email" id="loginEmail" name="loginEmail" required>
+                            <input type="email" id="loginEmail" name="loginEmail" required aria-required="true">
                             <br>
                             <label for="loginPassword">Password:</label>
-                            <input type="password" id="loginPassword" name="loginPassword" required>
+                            <input type="password" id="loginPassword" name="loginPassword" required aria-required="true">
                             <br>
                             <button type="submit" class="button">Login</button>
                             <p id="error-message" style="color:red;" class="message"></p>
                             <button class="google-button" id="google-login-button">Login with Google</button>
                         </form>
                         <a href="#" id="showSignupButton" class="link">Don't have an account? Signup</a>
-                    </div>
-                    <div id="signupSection" style="display: none;">
+                    </section>
+
+                    <section id="signupSection" aria-live="polite" style="display: none;">
                         <h2>Signup</h2>
                         <p id="signupMessage" class="message"></p>
                         <form id="signupForm">
                             <label for="signupEmail">Email:</label>
-                            <input type="email" id="signupEmail" name="signupEmail" required>
+                            <input type="email" id="signupEmail" name="signupEmail" required aria-required="true">
                             <br>
                             <label for="signupPassword">Password:</label>
-                            <input type="password" id="signupPassword" name="signupPassword">
+                            <input type="password" id="signupPassword" name="signupPassword" required aria-required="true">
                             <br>
                             <button type="submit" class="button">Signup</button>
                             <p id="signupMessage" class="message" style="color: red;"></p>
                             <button class="google-button" id="google-signup-button">Signup with Google</button>
                         </form>
                         <a href="#" id="backToLoginButton" class="link">Back to Login</a>
-                    </div>
+                    </section>
                 </div>
             </div>
         </div>
     </div>
 
-    <!--------------------------------------------------------------------------------------------> 
+    <!-------------------------------------------------------------------------------------------->
     <!-- User Page -->
     <div id="userPage" style="display: none;">
         <!--Header-->
-        <div class="header">
-            <div class="header-left"> 
+        <header class="header">
+            <div class="header-left">
                 <a href="#default" class="logo">
                     <div class="logo-container">
-                        <img src="images/findkeja_logo.png" alt="logo">
+                        <img src="images/findkeja_logo.png" alt="FindKeja logo">
                     </div>
                 </a>
             </div>
-            <div class="header-center">
+            <nav class="header-center">
                 <a href="#aboutCard">About</a>
                 <a href="#estateSearchCard">Search</a>
                 <a href="#featuredCard">Hotels</a>
                 <a href="#featuredCard">BnB</a>
                 <a href="#estateSearchCard">Movers</a>
-            </div>
-                            
+            </nav>
+
             <div class="header-right">
                 <!--ThemeToggle-->
-                <img class="theme-toggle" src="images/greenSun.svg" alt="Light Mode" id="themeToggle">
+                <img class="theme-toggle" src="images/greenSun.svg" alt="Light Mode" id="themeToggle" aria-label="Toggle light mode">
                 <!-- Dark mode icon (initially hidden) -->
-                <img class="dark-mode-icon" src="images/greenmoon.svg" alt="Dark Mode" style="display: none;">
-                
+                <img class="dark-mode-icon" src="images/greenmoon.svg" alt="Dark Mode" style="display: none;" aria-label="Toggle dark mode">
+
                 <div class="profile-info">
-                    <img class="profile-icon" src="images/profile-circle-svgrepo-com.svg" alt="Profile">
-                    <span id="usernameDisplay"></span>
+                    <img class="profile-icon" src="images/profile-circle-svgrepo-com.svg" alt="Profile icon">
+                    <span id="usernameDisplay" aria-live="polite"></span>
                 </div>
             </div>
-        </div>
-        
-        <!---------------------------------------------------------------------------------->            
-        <div class="card" id="featuredCard">
-            <h1>Hi! Welcome to FindKeja</h1>
-            <div class="carousel">
-                <div><img src="images/findkeja-sofa.jpeg" alt="Image 1"></div>
-                <div><img src="images/apartment1.jpg" alt="Image 2"></div>
-                <div><img src="images/houses.jpg" alt="Image 3"></div>
-                <div><img src="images/houses2.jpg" alt="Image 4"></div>
-                <div><img src="images/apartment2.jpg" alt="Image 5"></div>
-            </div>
-            
-            <div class="carousel-controls">
-                <button class="prev-btn" onclick="moveSlide('prev')">&lt;</button>
-                <button class="next-btn" onclick="moveSlide('next')">&gt;</button>
-            </div>
-        </div>
+        </header>
 
-        <!----------------------------------------------------------------------------------->              
-        <div class="card" id="estateSearchCard">
+        <!---------------------------------------------------------------------------------->
+        <section class="card" id="featuredCard">
+            <h1>Hi! Welcome to FindKeja</h1>
+            <div class="carousel" role="region" aria-label="Image carousel">
+                <div><img src="images/findkeja-sofa.jpeg" alt="A cozy sofa"></div>
+                <div><img src="images/apartment1.jpg" alt="Modern apartment building"></div>
+                <div><img src="images/houses.jpg" alt="Row of houses"></div>
+                <div><img src="images/houses2.jpg" alt="Residential houses"></div>
+                <div><img src="images/apartment2.jpg" alt="Apartment interior"></div>
+            </div>
+
+            <div class="carousel-controls" role="group" aria-label="Carousel controls">
+                <button class="prev-btn" onclick="moveSlide('prev')" aria-label="Previous slide">&lt;</button>
+                <button class="next-btn" onclick="moveSlide('next')" aria-label="Next slide">&gt;</button>
+            </div>
+        </section>
+
+        <!----------------------------------------------------------------------------------->
+        <section class="card" id="estateSearchCard">
             <div id="estateSearch">
                 <!-- Estate search form -->
                 <form id="estateSearchForm">
@@ -117,33 +120,31 @@
                 </form>
                 <!-- Estate drawer -->
                 <div id="estateListContainer">
-                    <ul id="estateList"></ul>
+                    <ul id="estateList" aria-live="polite"></ul>
                 </div>
             </div>
-                <!-- House listing -->
-                <div id="houseList"></div>
-        </div>
-        <!---------------------------------------------------------->  
-        <div class="card" id="aboutCard">
+            <!-- House listing -->
+            <div id="houseList" aria-live="polite"></div>
+        </section>
+        <!---------------------------------------------------------->
+        <section class="card" id="aboutCard">
             <h1>Why FindKeja?</h1>
             <p>Welcome to FindKeja! We're thrilled to have you join us on our journey to simplify the process of finding your next home. At FindKeja, we understand the challenges of searching for vacant houses within Nairobi estates, and we're here to make it easier for you. Our platform offers a user-friendly way for you to search for and book vacant houses, ensuring that you find the perfect place to call home. But that's not all! In addition to helping you find houses, we also provide the convenience of booking tour guides to show you around different neighborhoods, giving you a firsthand look at what each area has to offer.</p>
             <p>And it doesn't stop there – our services extend beyond just houses. You can also book movers directly on our platform, making the transition to your new home a breeze. Additionally, we offer a marketplace where you can shop for new items for your home or sell preowned items that you no longer need. With FindKeja, finding your next home or temporary stay, and all the services you need to make it feel like home, has never been easier. Start exploring now and discover the perfect place for you!</p>
-            <p>Best regards, </p>
+            <p>Best regards,</p>
             <p>The FindKeja Team</p>
-        </div>  
-        
+        </section>
+
         <!-- Footer -->
         <footer>
             <p>&copy;2024. FindKeja</p>
-        </footer>              
+        </footer>
     </div>
-
-    
 
     <!-- Script -->
     <script type="module" src="auth.js"></script>
     <script src="script.js"></script>
-
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 </body>
+
 </html>
