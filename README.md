@@ -9,3 +9,4 @@ contact the verified management (e.g., agency or owner).
 The frontend is developed using HTML5, CSS3, and JavaScript. It is deployed on Vercel: (https://findkeja.vercel.app/)
 
 The server-side is built on Node.js and uses a JSON server (JSON database). It is deployed on Render: (https://findkeja-server.onrender.com/)
+Backend repo: https://github.com/Rommie254/findkeja-server
